@@ -9,16 +9,23 @@ namespace ConsoleApp11
         static void Main(string[] args)
         {
             //task 4 and 5
-            /*ChechReverse();
+           /* ChechReverse();
             CheckContains();*/
 
             //bank app
-            /*CheckPin();
-            WorkWithBalance();*/
+            if (CheckPin())
+            {
+                WorkWithBalance();
+            }
+
+            else
+            {
+                Console.WriteLine("pin kod yalnisdir");
+            }
 
             //task6
             /*AddContact();*/
-
+           
         }
 
 
@@ -63,7 +70,7 @@ namespace ConsoleApp11
             }
         }
 
-        public static void CheckPin()
+        public static bool CheckPin()
         {
             string PIN = "1312";
             Console.WriteLine("HuseynBanka xosh gelmisiniz");
@@ -75,11 +82,13 @@ namespace ConsoleApp11
             if (input == PIN)
             {
                 Console.WriteLine("pin kod duzdu");
+                return true;
             }
 
             else
             {
                 Console.WriteLine("pin kod yalnisdir");
+                return false;   
             }
 
         }
@@ -98,7 +107,7 @@ namespace ConsoleApp11
             if (balance >= cash)
             {
                 int diff = balance - cash;
-                Console.WriteLine("pulunuzu goturun");
+                Console.WriteLine("pulunuzu goturun....");
                 Console.ReadLine();
                 Console.WriteLine($"balansinizda qalig mebleg {diff}");
             }
